@@ -6,6 +6,10 @@
 
 using namespace std;
 
+//Chaparro Ana Paula
+//Foresi Olivia
+//Giudice Martina
+
 int main() {
 
     bool menu = true;
@@ -66,7 +70,7 @@ int main() {
                                        ░░  
 
                      )"
-                     << "\nNinguno volvió. Ahora, vos decidís adentrarte en las catacumbas perdidas. Pasadizos oscuros, trampas mortales y acertijos antiguos te esperan. \n"
+                     << "\nNinguno volvió. Ahora, vos decidís adentrarte en las catacumbas perdidas. \nPasadizos oscuros, trampas mortales y acertijos antiguos te esperan. \n"
                      << "¿Serás capaz de encontrar el tesoro y salir con vida?\n"
                      << "Presiona Enter para continuar...\n";
                 cin.ignore(); cin.get();
@@ -98,13 +102,12 @@ int main() {
                   ._."._."._."._."._."._."._."._X"._."._."._."._."._."._."._."._."._.X._."._."._."
                     )"
 
-                  << "\nCada sala está llena de trampas y misterios, y en lo más profundo del lugar, el espíritu del faraón espera junto a su tesoro escondido.\n"
+                  << "\nCada sala está llena de trampas y misterios, \ny en lo más profundo del lugar, el espíritu del faraón espera junto a su tesoro escondido.\n"
                   << "\nPresioná Enter para ingresar en las catacumbas...\n";
                   cin.ignore(); cin.get();
                   system("clear");
 
                 //PRIMER JUEGO!
-                int intento, clave = 222;
 
                 cout << "\nUna cerradura dorada con jeroglificos bloquea el camino...\n"
                      <<R"(                                          
@@ -138,7 +141,6 @@ int main() {
                         cout << "\nCorrecto. Un pasadizo se abre lentamente...\n";
                         cin.ignore(); cin.get();
                         system("clear");
-                        break;
                     } else {
                         vidas--;
                         if (vidas > 0) {
@@ -158,7 +160,7 @@ int main() {
                                           
 
                                  )"
-                                << "\nPediste. El templo te rechaza...\n";
+                                << "\nPerdiste. El templo te rechaza...\n";
 
                             continuar = false;
                             cin.ignore(); cin.get();
@@ -256,12 +258,9 @@ int main() {
                 if (!(rta == "rio" || rta == "un rio" || rta == "el rio"|| rta == "RIO" || rta == "UN RIO" || rta == "EL RIO")) {
 
                     cout << "\nIncorrecto. La esfinge desaparece, pero te lanza una maldición...\n";
-
                     --vidas;
-
                     cin.ignore(); cin.get();
                     system("clear");
-                    break;
 
                 } else {
                     cout << "\nCorrecto. La sabiduría fue tu aliada.\n";
@@ -327,19 +326,19 @@ int main() {
   cin.ignore().get();
   system ("clear");
    
-  cout << "De repente, aparecen convenientemente unas personas dispuestas a ayudarte." 
-       << " Podés desconfiar y no reclutarlas, pero tené en cuenta que pueden aparecer más enemigos de las tinieblas" << endl;
+  cout << "De repente, aparecen convenientemente unas personas dispuestas a ayudarte.\n" 
+       << "Podés desconfiar y no reclutarlas, pero tené en cuenta que pueden aparecer más enemigos de las tinieblas" << endl;
 
-  float ataqueHumano = 0.6f;
-  float saludHumanoMaxima = 250.0f;
-  float cantidadDanioHumano = 200.0f;
+  float ataqueHumanos = 0.6f;
+  float saludHumanosMaxima = 250.0f;
+  float cantidadDanioHumanos = 200.0f;
 
-  float saludHumanoActual = saludHumanoMaxima;
+  float saludHumanosActual = saludHumanosMaxima;
 
-  float ataqueEnemigo = 0.4f; 
-  float saludEnemigoMaxima = 50.0f;
-  float cantidadDanioEnemigo = 40.0f;
-  float saludEnemigoActual = saludEnemigoMaxima;
+  float ataqueEnemigos = 0.4f; 
+  float saludEnemigosMaxima = 50.0f;
+  float cantidadDanioEnemigos = 40.0f;
+  float saludEnemigosActual = saludEnemigosMaxima;
 
   int cantidadHumanos;
   int cantidadEnemigos;
@@ -396,14 +395,17 @@ int main() {
  \( `   <.,../`     `-.._   _,-`
         )";
 
-  cout << "No sabés como, pero lo esquivaste. Ahora te toca a vos..." 
-       << "\nPresiona Enter para atacar!" ;
+  cout << "\nNo sabés como, pero lo esquivaste. Ahora te toca a vos..." 
+       << "\nPresiona Enter para atacar!"<< endl;
 
   cin.ignore().get();
   system ("clear");
 
-  cout << "Blandiste tu espada torpemente, pero en un golpe de suerte, lograste dañar a todos" << endl;
-  cout << "La pelea sigue entre espadazos y trampas..." << endl;
+  cout << "Blandiste tu espada torpemente, pero en un golpe de suerte, lograste dañar a todos" 
+       << "\nLa pelea sigue entre espadazos y trampas..." << endl;
+  cin.ignore().get();
+  system ("clear");
+
   
   while ((cantidadHumanos > 0) && (cantidadEnemigos > 0))
   {
@@ -414,32 +416,32 @@ int main() {
   
     if (turno == 'H')
     {
-      if (resultadoAtaque <= ataqueHumano)
-      {        saludEnemigoActual = saludEnemigoActual - cantidadDanioHumano;
+      if (resultadoAtaque <= ataqueHumanos)
+      {        saludEnemigosActual = saludEnemigosActual - cantidadDanioHumanos;
   
-        if (saludEnemigoActual <= 0)
+        if (saludEnemigosActual <= 0)
         {
   
           cantidadEnemigos--;
 
 
-          saludEnemigoActual = saludEnemigoMaxima;
+          saludEnemigosActual = saludEnemigosMaxima;
         }
       }
       turno = 'E'; 
     }
     else if (turno == 'E')
     {
-      if (resultadoAtaque <= ataqueEnemigo)
+      if (resultadoAtaque <= ataqueEnemigos)
       {
  
-        saludHumanoActual -= cantidadDanioEnemigo;
+        saludHumanosActual -= cantidadDanioEnemigos;
 
-        if (saludHumanoActual <= 0)
+        if (saludHumanosActual <= 0)
         {
           cantidadEnemigos--;
 
-          saludHumanoActual = saludEnemigoMaxima;
+          saludHumanosActual = saludEnemigosMaxima;
         }
       }
       turno = 'H'; 
@@ -447,31 +449,76 @@ int main() {
   }
 
     cout << "Se esta terminando la pelea...\n"
-         << "Después de una pelea dificíl contra las sombras y lo desconocido"
-         << "Se da el último golpe que lo define todo" 
-         << "Te golpearon en la cara, no podes ver nada" 
+         << "Después de una pelea dificíl contra las sombras y lo desconocido.\n"
+         << "Se da el último golpe que lo define todo.\n" 
+         << "Te golpearon en la cara, no podes ver nada.\n" 
          << "Hasta que te recuperás y ves que..." << endl;
+           cin.ignore().get();
+            system ("clear");
 
 
-  if (cantidadEnemigos > 0)
+
+  if (cantidadHumanos > 0)
   {
-    cout << "Tus aliados y vos lo lograron, derrotaron al enemigo!"
-         << "Ahora el único problema es como van a dividir el corazón." 
-         << "Pero eso es otra historia..." ;
-    cout << "Quedaron " << cantidadHumanos << " humanos vivos" << endl;
+    cout << "Tus aliados y vos lo lograron, derrotaron al enemigo!\n"
+         << "Ahora el único problema es como van a dividir el corazón.\n" 
+         << "Pero eso es otra historia...\n";
+
+          cout << R"(
+                 ***          ***                     
+              ***....**     **...***                  
+             **........** **.......**                 
+      ***    **..........*.........**    ***
+   **.....**  **..................**  **.....**
+ **.........**  **..............**  **.........**
+*..............*   *..........*   *..............*
+ **..............*   *......*   *..............**
+   **..............** *....* **..............**
+     *......................................*
+   **..............**........**..............**
+ **..............*    *....*....*..............**
+*..............*    *........* ...*..............*
+ **.........**    *............* ...**.........**
+   **.....**   **...............**....**.....**
+      ***    **...................**.....***
+           **...........*...........**....*
+            **.........* *.........** *......*..*..*
+              *......**   **......*     *........*
+                **  *       * **           *...*
+                                              * 
+                                              * 
+                                              *  )" << endl;
+
+
+    cout << "Quedaron " << cantidadHumanos << " humanos vivos." << endl;
+    
   }
   else
   {
-    cout << "Perdiste, nadie sobrevivió." << endl;
-    cout << "Al final, no eran tan bueno aliados" << endl;
+    cout << "Perdiste, nadie sobrevivió."
+         << "\nAl final, no eran tan buenos aliados" << endl;
+    cout <<R"(
 
+                                    █████▒▄▄▄       ██▓     ██▓     ▒█████  
+                                  ▓██   ▒▒████▄    ▓██▒    ▓██▒    ▒██▒  ██▒
+                                  ▒████ ░▒██  ▀█▄  ▒██░    ▒██░    ▒██░  ██▒
+                                  ░▓█▒  ░░██▄▄▄▄██ ▒██░    ▒██░    ▒██   ██░
+                                  ░▒█░    ▓█   ▓██▒░██████▒░██████▒░ ████▓▒░
+                                   ▒ ░    ▒▒   ▓▒█░░ ▒░▓  ░░ ▒░▓  ░░ ▒░▒░▒░ 
+                                   ░       ▒   ▒▒ ░░ ░ ▒  ░░ ░ ▒  ░  ░ ▒ ▒░ 
+                                   ░ ░     ░   ▒     ░ ░     ░ ░   ░ ░ ░ ▒  
+                                                ░  ░    ░  ░    ░  ░    ░ ░    
+                                          
 
-
-   cout << "Quedaron " << cantidadEnemigos << " enemigos de pie" << endl;
+                                 )";
+   cout << "\nQuedaron " << cantidadEnemigos << " enemigos de pie\n" << endl;
   }
 
-  cout << cantidadHumanosInicial - cantidadHumanos << " humanos perdieron sus vidas y " << cantidadEnemigosInicial - cantidadEnemigos << "enemigos fueron derrotados.\n";
-break;
+  cout << cantidadHumanosInicial - cantidadHumanos << " humanos perdieron sus vidas y " << cantidadEnemigosInicial - cantidadEnemigos << " enemigos fueron derrotados.\n";
+
+      cin.ignore().get();
+      system ("clear");
+      break;
 
   cout << endl;
             }
